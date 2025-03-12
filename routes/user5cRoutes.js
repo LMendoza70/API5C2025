@@ -4,7 +4,7 @@ const user5c=require('../models/user5c');
 
 //creamos un ednpoint para obtener a todos los usuarios
 //get 
-router.get('/users', async (req,res)=>{
+router.get('/api/users', async (req,res)=>{
     try{
         const users=await user5c.find();
         res.json(users);
@@ -14,7 +14,7 @@ router.get('/users', async (req,res)=>{
 })
 
 // Endpoint para crear un nuevo usuario
-router.post('/users', async (req, res) => {
+router.post('/api/users', async (req, res) => {
   const user = new user5c({
     name: req.body.name,
     email: req.body.email,
